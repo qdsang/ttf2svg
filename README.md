@@ -21,12 +21,6 @@ ttf2svg fontello.ttf fontello.svg
 
 Or:
 
-``` bash
-ttf2svg < fontello.ttf > fontello.svg
-```
-
-Or:
-
 ``` javascript
 var ttf2svg = require('ttf2svg')
   , fs = require('fs')
@@ -41,6 +35,13 @@ fs.readFile('./fontello.ttf', function (err, buffer) {
 });
 
 ```
+
+Stats
+-----
+
+[![NPM](https://nodei.co/npm/ttf2svg.png?downloads=true&stars=true)](https://nodei.co/npm/ttf2svg/)
+[![NPM](https://nodei.co/npm-dl/ttf2svg.png)](https://nodei.co/npm/ttf2svg/)
+
 
 
 Reference
