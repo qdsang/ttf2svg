@@ -12,7 +12,12 @@ var ttf2svg = require('../src/index')
 ;
 
 var fontPath = process.argv[2];
-var fontOutputPath = process.argv[3] || './';
+var fontOutputPath = /*process.argv[3] || */'./';
+
+if (!fontPath) {
+	console.log(' eg: ttf2svg ./font.ttf');
+	process.exit();
+}
 
 var basename = path.basename(fontPath, path.extname(fontPath));
 var fontOutputFilePath = path.join(fontOutputPath, basename + '.svg');
