@@ -3,10 +3,11 @@
 <svg xmlns="http://www.w3.org/2000/svg">
     <defs>
         <font id="<%= meta['Postscript name'] %>">
-            <font-face font-family="<%= meta['Postscript name'] %>"
+            <font-face font-family="<%= meta['Font family'] %>"
                        units-per-em="<%= meta.head.unitsPerEm %>"
                        ascent="<%= meta.hhea.ascender %>"
                        descent="<%= meta.hhea.descender %>"
+                       bbox="<%= meta.head.xMin %> <%= meta.head.yMin %> <%= meta.head.xMax %> <%= meta.head.yMax %>"
                     />
             <missing-glyph horiz-adv-x="0" />
             <% for (var idx = 0; idx < glyphs.length; idx++) { %>
