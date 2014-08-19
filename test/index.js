@@ -7,9 +7,12 @@ fs.readFile(__dirname + '/fontello.ttf', function (err, buffer) {
     if (!!err) throw err;
 
     var svgContent = ttf2svg(buffer);
-    var outputPath = __dirname + '/fontello-ttf2svg.svg';
+    var outputPath = __dirname + '/fontello2.svg';
     fs.writeFileSync(outputPath, svgContent);
-    console.log('ok, ' + outputPath + '\n');
+
+    console.log('ok, ' + outputPath);
+    console.log('open ./test/demo.html' + '\n');
+
 });
 
 
