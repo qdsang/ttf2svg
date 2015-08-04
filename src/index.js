@@ -9,7 +9,7 @@ function ttf2svg(buffer) {
     var svg = new TTF2SVG(buffer);
 
     var tmplPath = path.join(__dirname, '../tmpls/font-svg.xml.ejs'),
-        tmpl = fs.readFileSync(tmplPath);
+        tmpl = fs.readFile(tmplPath);
 
     return svg.renderByTmpl(tmpl);
 }
