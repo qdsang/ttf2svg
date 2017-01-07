@@ -1,17 +1,15 @@
 
-var TTF2SVG = require('./ttf2svg')
-  , fs = require('fs')
-  , path = require('path')
-;
+var fontCarrier = require('font-carrier');
 
 function ttf2svg(buffer) {
 
-    var svg = new TTF2SVG(buffer);
+	var transFont = fontCarrier.transfer(buffer);
+	
+	var output = transFont.output({
+	  types:['svg']
+	});
 
-    var tmplPath = path.join(__dirname, '../tmpls/font-svg.xml.ejs'),
-        tmpl = fs.readFileSync(tmplPath);
-
-    return svg.renderByTmpl(tmpl);
+	return output.svg.toString();
 }
 
 module.exports = ttf2svg;
