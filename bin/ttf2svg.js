@@ -12,15 +12,18 @@ var ttf2svg = require('../src/index')
 ;
 
 var fontPath = process.argv[2];
-var fontOutputPath = /*process.argv[3] || */'./';
+var fontOutputPath = process.argv[3] || './';
 
 if (!fontPath) {
-	console.log(' eg: ttf2svg ./font.ttf');
+	console.log(' eg: ttf2svg ./font.ttf ./font.svg');
 	process.exit();
 }
 
-var basename = path.basename(fontPath, path.extname(fontPath));
-var fontOutputFilePath = path.join(fontOutputPath, basename + '.svg');
+var fontOutputFilePath = fontOutputPath;
+if (path.extname(fontOutputFilePath) != '.svg') {
+	var basename = path.basename(fontPath, path.extname(fontPath));
+    fontOutputFilePath = path.join(fontOutputPath, basename + '.svg');
+}
 
 fs.readFile(fontPath, function (err, buffer) {
     if (!!err) throw err;
