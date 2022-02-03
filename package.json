@@ -3,8 +3,7 @@
   "version": "1.2.0",
   "description": "Font convertor, TTF to SVG, for node.js",
   "main": "./src/index.js",
-  "scripts": {
-  },
+  "scripts": {},
   "bin": {
     "ttf2svg": "bin/ttf2svg.js"
   },
@@ -27,9 +26,7 @@
   },
   "homepage": "https://github.com/qdsang/ttf2svg",
   "dependencies": {
-    "font-carrier": "0.0.12"
+    "font-carrier": "0.3.0"
   },
-  "devDependencies": {
-
-  }
+  "devDependencies": {}
 }
